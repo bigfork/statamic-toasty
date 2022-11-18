@@ -1,0 +1,32 @@
+{
+    "name": "withcandour/statamic-toasty",
+    "description": "Automatic static cache warming for Statamic",
+    "version": "0.0.1",
+    "type": "statamic-addon",
+    "autoload": {
+        "psr-4": {
+            "WithCandour\\StatamicToasty\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Candour",
+            "email": "devs@withcandour.co.uk"
+        }
+    ],
+    "extra": {
+        "statamic": {
+            "name": "Statamic Toasty",
+            "description": "Automatic static cache warming for Statamic."
+        },
+        "laravel": {
+            "providers": [
+                "WithCandour\\StatamicToasty\\ToastyServiceProvider"
+            ]
+        }
+    },
+    "require": {
+        "fabpot/goutte": "^4.0",
+        "jwage/purl": "^0.0.9"
+    }
+}
