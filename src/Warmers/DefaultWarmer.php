@@ -17,7 +17,9 @@ class DefaultWarmer extends Warmer
      */
     public function warm(mixed $sites = 'all', bool $output = false): void
     {
+        $cacheKey = Str::random();
         Cache::put('toasty.invalid', false);
+        Cache::put('toasty.key', $cacheKey);
 
         if ($sites === 'all') {
             $sites = \config('statamic.toasty.sites', []);
@@ -63,7 +65,7 @@ class DefaultWarmer extends Warmer
                 $avilableUrls = [$url];
                 $foundUrls = ['/' => true];
 
-                while(\count($avilableUrls) > 0) {
+                while(\count($avilableUrls) > 0 && Cache::get('toasty.key', null) === $cacheKey) {
                     $url = \array_pop($avilableUrls);
 
                     if ($output) {
