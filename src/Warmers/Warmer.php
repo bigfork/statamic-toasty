@@ -3,7 +3,6 @@
 namespace WithCandour\StatamicToasty\Warmers;
 
 use Illuminate\Support\Facades\App;
-use Purl\Url as PurlURL;
 use Statamic\Facades\Pattern;
 use Statamic\Sites\Site;
 use Statamic\Support\Str;

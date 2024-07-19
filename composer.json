@@ -1,7 +1,7 @@
 {
     "name": "withcandour/statamic-toasty",
     "description": "Automatic static cache warming for Statamic",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "type": "statamic-addon",
     "autoload": {
         "psr-4": {
@@ -26,7 +26,8 @@
         }
     },
     "require": {
-        "fabpot/goutte": "^4.0",
-        "jwage/purl": "^0.0.9"
+        "statamic/cms": "^5",
+        "symfony/browser-kit": "^7",
+        "symfony/http-client": "^7"
     }
 }

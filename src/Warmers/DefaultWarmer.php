@@ -2,10 +2,10 @@
 
 namespace WithCandour\StatamicToasty\Warmers;
 
-use Goutte\Client;
 use Illuminate\Support\Facades\Cache;
 use Statamic\Facades\Site;
 use Statamic\Support\Str;
+use Symfony\Component\BrowserKit\HttpBrowser;
 use Symfony\Component\DomCrawler\Crawler;
 use Symfony\Component\HttpClient\HttpClient;
 use WithCandour\StatamicToasty\Exceptions\WarmerException;
@@ -57,7 +57,7 @@ class DefaultWarmer extends Warmer
                 'timeout' => 60,
             ]);
 
-            $client = new Client($httpClient);
+            $client = new HttpBrowser($httpClient);
 
             // Loop over our sites and get the urls for each
             foreach ($homepages as $site => $url) {
