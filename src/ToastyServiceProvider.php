@@ -71,7 +71,7 @@ class ToastyServiceProvider extends AddonServiceProvider
                 ->everyMinute()
                 ->withoutOverlapping()
                 ->when(function () {
-                    return Cache::get('toasty.invalid', true);
+                    return Cache::get('toasty.invalid') === true;
                 });
         }
     }
